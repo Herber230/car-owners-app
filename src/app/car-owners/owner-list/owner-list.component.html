@@ -1,1 +1,27 @@
-<p>owner-list works!</p>
+<div class="content">
+  <mat-card>
+    <mat-card-title>
+      Propietarios
+    </mat-card-title>
+    <mat-card-content>
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>Edad</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let element of owners" class="row" (click)="onSelect(element)">
+            <td>{{element.nombre}}</td>
+            <td>{{element.apellido}}</td>
+            <td>{{element.edad}}</td>
+          </tr>
+        </tbody>
+      </table>
+      <br/>
+      <button mat-raised-button color="primary" (click)="load()">Cargar datos</button>
+    </mat-card-content>
+  </mat-card>
+</div>

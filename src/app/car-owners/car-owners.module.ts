@@ -5,7 +5,7 @@ import { OwnerSingleViewComponent } from './owner-single-view/owner-single-view.
 import { CarOwnersRoutingModule } from './car-owners-routing.module';
 
 import { MatButtonModule } from '@angular/material/button';
-
+import { MatCardModule } from '@angular/material/card';
 
 
 @NgModule({
@@ -16,7 +16,8 @@ import { MatButtonModule } from '@angular/material/button';
   imports: [
     CommonModule,
     CarOwnersRoutingModule,
-    MatButtonModule
+    MatButtonModule,
+    MatCardModule
   ]
 })
 export class CarOwnersModule { }
