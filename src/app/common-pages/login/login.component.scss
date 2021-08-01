@@ -1,0 +1,33 @@
+.container {
+  display: flex;
+  justify-content: center;
+  background-color: #E5E5E5;
+  height: 100%;
+}
+
+.box {
+  height: 350px;
+  width: 300px;
+  padding: 25px;
+  margin-top: 50px;
+}
+
+.field {
+  width: 100%;
+}
+
+button {
+  display: block;
+  margin: 25px auto;
+}
+
+.login-error {
+  color: red;
+  background-color: rgb(255,0,0,0.1);
+  display: block;
+  text-align: center;
+  font-weight: 500;
+  padding: 5px;
+  border-radius: 5px;
+}
+

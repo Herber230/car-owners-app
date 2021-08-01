@@ -1,1 +1,25 @@
-<p>login works!</p>
+<div class="container">
+  <mat-card class="box">
+    <mat-card-content>
+      <h2>Bienvenido</h2>
+      <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" >
+        <mat-form-field class="field">
+          <mat-label>Usuario</mat-label>
+          <input matInput type="text" formControlName="user" />
+          <mat-error>Usuario no valido</mat-error>
+        </mat-form-field>
+        <mat-form-field class="field">
+          <mat-label>Contraseña</mat-label>
+          <input matInput type="password" formControlName="password" />
+          <mat-error>Contraseña no valida</mat-error>
+        </mat-form-field>
+        <button mat-raised-button color="primary" type="submit" [disabled]="!loginForm.valid">
+          LOGIN
+        </button>
+        <span *ngIf="loginError" class="login-error">
+          {{loginError}}
+        </span>
+      </form>
+    </mat-card-content>
+  </mat-card>
+</div>
