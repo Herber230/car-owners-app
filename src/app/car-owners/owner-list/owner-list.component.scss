@@ -1,17 +1,24 @@
 .content {
-  width: 600px;
+    width: 600px;
 }
 
 .table {
-  margin-top: 50px !important;
-  display: table;
-  width: 100%;
+    width: 100%;
 }
 
 .row {
-  text-align: center;
+    text-align: center;
 }
 
 .row:hover {
-  background-color: lightblue;
+    background-color: lightblue;
+}
+
+.title {
+    text-align: center;
+}
+
+.thead {
+    text-align: center;
+    font-weight: bold;
 }
