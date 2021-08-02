@@ -6,6 +6,10 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CommonPagesModule } from './common-pages/common-pages.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatTableModule} from '@angular/material/table';
+
+
+//import { MatPaginator, MatSort, MatTableDataSource, MatDialog } from '@angular/material'
 
 @NgModule({
   declarations: [
@@ -16,7 +20,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     AppRoutingModule,
     CommonPagesModule,
     BrowserAnimationsModule,
-    HttpClientModule
+    HttpClientModule,
+  //  MatTableModule,
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

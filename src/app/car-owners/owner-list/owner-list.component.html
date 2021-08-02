@@ -4,24 +4,36 @@
       Propietarios
     </mat-card-title>
     <mat-card-content>
-      <table class="table">
-        <thead>
-          <tr>
-            <th>Nombre</th>
-            <th>Apellido</th>
-            <th>Edad</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr *ngFor="let element of owners" class="row" (click)="onSelect(element)">
-            <td>{{element.nombre}}</td>
-            <td>{{element.apellido}}</td>
-            <td>{{element.edad}}</td>
-          </tr>
-        </tbody>
-      </table>
+      <br/>
+      
+      <mat-table [dataSource]="owners" class="mat-elevation-z8 demo-table">
+        
+        <ng-container matColumnDef="nombre">
+          <mat-header-cell mat-header-cell *matHeaderCellDef> Name </mat-header-cell>
+          <mat-cell mat-cell *matCellDef="let element"> {{element.nombre}} </mat-cell>
+        </ng-container>
+      
+    
+        <ng-container matColumnDef="apellido">
+          <mat-header-cell mat-header-cell *matHeaderCellDef> Apellido </mat-header-cell>
+          <mat-cell mat-cell *matCellDef="let element"> {{element.apellido}} </mat-cell>
+        </ng-container>
+      
+        
+        <ng-container matColumnDef="edad">
+          <mat-header-cell mat-header-cell *matHeaderCellDef> Edad </mat-header-cell>
+          <mat-cell mat-cell *matCellDef="let element"> {{element.edad}} </mat-cell>
+        </ng-container>
+      
+      
+       <mat-header-row *matHeaderRowDef="displayedColumns" ></mat-header-row>
+     <mat-row matRipple *matRowDef="let row; columns: displayedColumns;" (click)="onSelect(row)"></mat-row>
+      </mat-table>
+      
       <br/>
       <button mat-raised-button color="primary" (click)="load()">Cargar datos</button>
+
     </mat-card-content>
   </mat-card>
 </div>
+
