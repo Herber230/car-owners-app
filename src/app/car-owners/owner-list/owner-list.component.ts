@@ -11,6 +11,7 @@ import { PersonaService } from '../services/persona.service';
 export class OwnerListComponent implements OnInit {
 
   owners : Array<Persona> = [];
+  displayedColumns: string[] = ['nombre', 'apellido', 'edad'];
 
   constructor(private personaService: PersonaService, private router:Router) { }
 
