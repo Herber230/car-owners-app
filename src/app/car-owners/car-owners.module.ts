@@ -6,7 +6,7 @@ import { CarOwnersRoutingModule } from './car-owners-routing.module';
 
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
-
+import {MatTableModule} from '@angular/material/table';
 
 @NgModule({
   declarations: [
@@ -17,7 +17,8 @@ import { MatCardModule } from '@angular/material/card';
     CommonModule,
     CarOwnersRoutingModule,
     MatButtonModule,
-    MatCardModule
+    MatCardModule,
+    MatTableModule
   ]
 })
 export class CarOwnersModule { }
