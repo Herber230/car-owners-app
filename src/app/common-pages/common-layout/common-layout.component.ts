@@ -11,8 +11,8 @@ export class CommonLayoutComponent implements OnInit, OnDestroy {
   openSideNav = true;
 
   items = [
-    {display: "Lista de Propietarios", route: "/owners"},
-    {display: "Primer Propietario", route: "/owners/1"}
+    {display: "Lista de Propietarios", route: "/car-owners/personas"},
+    {display: "Lista de Automoviles", route: "/car-owners/automoviles"}
   ];
 
   ngOnInit(): void {

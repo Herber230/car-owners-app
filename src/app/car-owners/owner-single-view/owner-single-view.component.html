@@ -1,10 +1,44 @@
 <div class="content">
   <mat-card>
-    <mat-card-title>
-      Propietario:&nbsp;{{this.nombre}}
-    </mat-card-title>
+    <mat-card-title> Propietario </mat-card-title>
     <mat-card-content>
-      Nombre Completo:&nbsp;{{this.nombreCompleto}}
+      <form [formGroup]="personaForm" (ngSubmit)="onSubmit()">
+        <mat-form-field class="field">
+          <mat-label>Nombre</mat-label>
+          <input matInput type="text" formControlName="nombre" />
+          <mat-error>Nombre no es valido</mat-error>
+        </mat-form-field>
+        <mat-form-field class="field">
+          <mat-label>Apellido</mat-label>
+          <input matInput type="text" formControlName="apellido" />
+          <mat-error>Apellido no es valido</mat-error>
+        </mat-form-field>
+        <mat-form-field class="field">
+          <mat-label>Edad</mat-label>
+          <input matInput type="number" formControlName="edad" />
+          <mat-error>Edad no es valida</mat-error>
+        </mat-form-field>
+        <mat-form-field class="field">
+          <mat-label>Usuario</mat-label>
+          <input matInput type="text" formControlName="user" />
+          <mat-error>Usuario no es valido</mat-error>
+        </mat-form-field>
+        <mat-form-field class="field">
+          <mat-label>Contraseña</mat-label>
+          <input matInput type="password" formControlName="pass" />
+          <mat-error>Contraseña no es valida</mat-error>
+        </mat-form-field>
+        <div class="button-container">
+          <button
+            mat-raised-button
+            color="primary"
+            type="submit"
+            [disabled]="!personaForm.valid"
+          >
+            Guardar
+          </button>
+        </div>
+      </form>
     </mat-card-content>
   </mat-card>
 </div>

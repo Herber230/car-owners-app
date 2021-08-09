@@ -1,3 +1,4 @@
+import { HttpEvent, HttpHandler, HttpInterceptor, HttpRequest } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import {
   ActivatedRouteSnapshot,
@@ -5,6 +6,7 @@ import {
   Router,
   RouterStateSnapshot,
 } from '@angular/router';
+import { Observable } from 'rxjs';
 
 const ACCESS_TOKEN = 'accessToken';
 const REFRESH_TOKEN = 'refreshToken';
@@ -12,8 +14,12 @@ const REFRESH_TOKEN = 'refreshToken';
 @Injectable({
   providedIn: 'root',
 })
-export class AuthService implements CanActivate {
+export class AuthService implements CanActivate, HttpInterceptor {
   constructor(private router: Router) {}
+  
+  intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
+    return next.handle(this.addToken(req));
+  }
 
   canActivate(
     route: ActivatedRouteSnapshot,
@@ -25,6 +31,12 @@ export class AuthService implements CanActivate {
     }
 
     return isAuthenticated;
+  }
+
+  addToken(req: HttpRequest<any>): HttpRequest<any> {
+    return req.clone({setHeaders: {
+      Authorization: `Bearer ${this.accessToken}`
+    }})
   }
 
   get accessToken() {
