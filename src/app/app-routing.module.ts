@@ -9,7 +9,7 @@ import { AuthService } from './common-pages/services/auth.service';
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
   {
-    path: 'owners',
+    path: 'car-owners',
     component: CommonLayoutComponent,
     canActivate: [AuthService],
     loadChildren: () =>

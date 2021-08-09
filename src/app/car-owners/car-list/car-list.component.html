@@ -1,0 +1,31 @@
+<div class="content">
+  <mat-card>
+    <mat-card-title>
+      Automovil
+    </mat-card-title>
+    <mat-card-content>
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Marca</th>
+            <th>Linea</th>
+            <th>Modelo</th>
+            <th>Color</th>
+            <th>puertas</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let element of cars" class="row" (click)="onSelect(element)">
+            <td>{{element.marca}}</td>
+            <td>{{element.linea}}</td>
+            <td>{{element.modelo}}</td>
+            <td>{{element.color}}</td>
+            <td>{{element.puertas}}</td>
+          </tr>
+        </tbody>
+      </table>
+      <br/>
+      <button mat-raised-button color="primary" (click)="new()">Nuevo Automovil</button>
+    </mat-card-content>
+  </mat-card>
+</div>

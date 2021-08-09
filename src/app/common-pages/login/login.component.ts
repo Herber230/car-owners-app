@@ -57,7 +57,7 @@ export class LoginComponent implements OnInit, OnDestroy {
           if (result.success) {
             this.authService.accessToken = result.token;
             this.authService.refreshToken = result.refreshToken;
-            this.router.navigate(['owners']);
+            this.router.navigate(['car-owners', 'personas']);
           } else {
             this.setError('Usuario o contraseña invalidos');
           }

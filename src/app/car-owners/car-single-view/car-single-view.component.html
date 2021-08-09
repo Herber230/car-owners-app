@@ -1,0 +1,64 @@
+<div class="content">
+  <mat-card>
+    <mat-card-title>
+      Automovil
+    </mat-card-title>
+    <mat-card-content>
+      <form [formGroup]="carForm" (ngSubmit)="onSubmit()">
+        <mat-form-field class="field">
+          <mat-label>
+            Marca
+          </mat-label>
+          <input type="text" matInput formControlName="marca">
+          <mat-error>Marca no valida</mat-error>
+        </mat-form-field>
+        <mat-form-field class="field">
+          <mat-label>
+            Linea
+          </mat-label>
+          <input type="text" matInput formControlName="linea">
+          <mat-error>Linea no valida</mat-error>
+        </mat-form-field>
+        <mat-form-field class="field">
+          <mat-label>
+            Modelo
+          </mat-label>
+          <input type="number" matInput formControlName="modelo">
+          <mat-error>Modelo no valido</mat-error>
+        </mat-form-field>
+        <mat-form-field class="field">
+          <mat-label>
+            Color
+          </mat-label>
+          <input type="text" matInput formControlName="color">
+          <mat-error>Color no valido</mat-error>
+        </mat-form-field>
+        <mat-form-field class="field">
+          <mat-label>
+            Puertas
+          </mat-label>
+          <input type="number" matInput formControlName="puertas">
+          <mat-error>Puertas no validas</mat-error>
+        </mat-form-field>
+        <mat-form-field class="field">
+          <mat-label>
+            Propietario
+          </mat-label>
+          <mat-select formControlName="propietario">
+            <mat-option *ngFor="let p of personas" [value]="p.id">{{p.nombre + ' ' + p.apellido}}</mat-option>
+          </mat-select>
+          <mat-error>Propietario no valida</mat-error>
+        </mat-form-field>
+        <div class="button-container">
+          <button
+            mat-raised-button
+            color="primary"
+            type="submit"
+          >
+            Guardar
+          </button>
+        </div>
+      </form>
+    </mat-card-content>
+  </mat-card>
+</div>

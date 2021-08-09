@@ -1,6 +1,8 @@
 export type Persona = {
-  id: number;
+  id: number | undefined;
   nombre: string;
   apellido: string;
   edad: number;
+  pass: string;
+  user: string;
 }

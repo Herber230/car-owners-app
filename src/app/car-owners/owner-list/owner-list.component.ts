@@ -33,8 +33,12 @@ export class OwnerListComponent implements OnInit {
     })
   }
 
+  new() {
+    this.router.navigate(['car-owners', 'personas', 'new'])
+  }
+
   onSelect(persona: Persona) {
-    this.router.navigate(['owners', persona.id])
+    this.router.navigate(['car-owners', 'personas', persona.id])
   }
 
 }
